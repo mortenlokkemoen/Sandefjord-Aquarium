@@ -1,5 +1,9 @@
 body,
-html {
+html,
+h1,
+h2,
+h3,
+p {
   margin: 0;
   padding: 0;
   font-family: "Oswald", sans-serif;
@@ -8,9 +12,10 @@ html {
 https://stackoverflow.com/questions/29591465/use-css-variables-with-rgba-for-gradient-transparency
 men ideen og mesteparten av koden kommer fra meg*/
 .main-container {
+  @media screen and (max-width: 90%, 70,5rem);
+  margin-inline: auto; /*Definerer både logisk inline start og slutt på et element som tekst og direction*/
   position: relative;
   height: 100%;
-  width: 100%;
   background-image: repeating-linear-gradient(
     to bottom,
     #2ddbe7 0%,
@@ -19,11 +24,12 @@ men ideen og mesteparten av koden kommer fra meg*/
     #0a1256 100%
   );
 }
+
 /* Her er alt som har med header å gjøre*/
 .logo {
-  width: 75px;
-  height: 75px;
-  margin: 15px;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin: 1;
 }
 
 header {
@@ -34,7 +40,7 @@ header {
   position: relative;
   height: 10%;
   width: 100%;
-  padding: 25px 0;
+  padding: 5em 0;
 }
 
 ul {
@@ -42,8 +48,7 @@ ul {
   list-style: none;
   display: flex;
   justify-content: flex-start;
-  gap: 50px;
-  top: 28px; /* Legger a linkene på bunn linjem til tittelen*/
+  gap: 2.4em;
 }
 
 a:link,
@@ -54,14 +59,15 @@ a:visited {
 .section-one {
   position: relative;
   display: grid;
-  grid-template-columns: 450px 550px 300px;
+  grid-template-columns: 35rem 35rem 15rem;
   justify-content: center;
   align-items: center; /* Aligner teksten midt på boksen*/
-  gap: 10px;
+  gap: 0.625em;
   margin-top: 150px;
   color: #fff;
   font-size: 1.2rem;
   line-height: 1.6rem;
+  padding: 0 0 0 9.375em; /*Padder content til å bli mer sentrert på bilde i forhold til annet innhold*/
 }
 
 h2 {
@@ -70,8 +76,8 @@ h2 {
 
 .sect1-image,
 .sect2-image {
-  width: 100%;
-  height: 100%;
+  display: block;
+  max-width: 100%;
   border-radius: 10px;
 }
 
@@ -82,35 +88,35 @@ h2 {
 .section-two {
   position: relative;
   display: grid;
-  grid-template-columns: 250px 750px 300px;
+  grid-template-columns: 15em 40em 15rem; /*Fant ut størrsen jeg ville ha px og konverterte til EM for responsivitet*/
   justify-content: center;
   align-items: center; /* Aligner teksten midt på boksen*/
-  margin-top: 50px;
+  margin-top: 3rem;
   color: #fff;
   gap: 10px;
   font-size: 1.2rem;
   line-height: 1.6rem;
+  padding: 0 0 0 11rem; /*Padder content til å bli mer sentrert på bilde i forhold til annet innhold*/
 }
 /* Denne setter oppløsningen på alle fiskebildene*/
 .fish-img {
+  display: block;
   width: 100%;
-  height: 100%;
   border-radius: 5px 0 0 5px; /*Runder av venstre hjørner på bilde*/
 }
 
 .fish-card {
-  margin-right: 385px;
   position: relative;
-  margin-top: 50px;
+  margin-top: 3em;
   display: grid;
-  grid-template-columns: 500px 390px;
+  grid-template-columns: 31.25em 24.375em;
   justify-content: center;
 }
 
 .fish-cardtext {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #0a1256;
-  padding: 40px;
+  padding: 2.5em;
   border-radius: 0 5px 5px 0; /*Ved å bruke Figma kom jeg frem til denne løsningen selv. Hvor jeg bestemmer at topp høyre og bunn høyre hjørne skal rundes av*/
 }
 
@@ -140,4 +146,50 @@ h2 {
 }
 .fish8 {
   background-color: #d3cfff;
+}
+
+@media screen and (max-width: 800px) {
+  .section-one {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  .sect1-text,
+  .sect2-text {
+    font-size: 1em;
+    line-height: 1.8rem;
+  }
+  header {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+    gap: 1em;
+  }
+  ul {
+    position: relative;
+    list-style: none;
+    gap: 1em;
+    padding: 0 1rem;
+  }
+  .section-two {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  .fish-card {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 0.2rem;
+  }
+}
+
+.Lottie-animation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0.4;
 }

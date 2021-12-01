@@ -1,0 +1,46 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+/*deler av repeating-linear gradient er hentet fra 
+https://stackoverflow.com/questions/29591465/use-css-variables-with-rgba-for-gradient-transparency
+men ideen og mesteparten av koden kommer fra meg*/
+.main-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #2ddbe7 0%,
+    #6a91dd 10%,
+    #3b5fa7 40%,
+    #0a1256 100%
+  );
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  margin: 15px;
+}
+
+header {
+  color: #fff;
+  display: flex;
+  font-size: 1.2em;
+  justify-content: center;
+  position: absolute;
+  height: 20%;
+  width: 100%;
+}
+
+ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  top: 10%;
+}

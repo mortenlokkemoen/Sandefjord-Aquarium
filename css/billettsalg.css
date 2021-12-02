@@ -1,16 +1,18 @@
 body,
-html {
+html,
+h1,
+h2,
+h3,
+p {
   margin: 0;
   padding: 0;
   font-family: "Oswald", sans-serif;
 }
-/*deler av repeating-linear gradient er hentet fra 
-https://stackoverflow.com/questions/29591465/use-css-variables-with-rgba-for-gradient-transparency
-men ideen og mesteparten av koden kommer fra meg*/
+
 .main-container {
+  margin-inline: auto;
   position: relative;
   height: 100vh;
-  width: 100%;
   background-image: repeating-linear-gradient(
     to bottom,
     #2ddbe7 0%,
@@ -21,9 +23,9 @@ men ideen og mesteparten av koden kommer fra meg*/
 }
 
 .logo {
-  width: 75px;
-  height: 75px;
-  margin: 15px;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin: 1;
 }
 
 header {
@@ -31,9 +33,10 @@ header {
   display: flex;
   font-size: 1.2em;
   justify-content: center;
-  position: absolute;
-  height: 20%;
+  position: relative;
+  height: 10%;
   width: 100%;
+  padding: 5em 0;
 }
 
 ul {
@@ -41,6 +44,163 @@ ul {
   list-style: none;
   display: flex;
   justify-content: flex-start;
-  gap: 50px;
-  top: 10%;
+  gap: 2.4em;
+}
+
+a:link,
+a:visited {
+  color: #fff;
+}
+
+main {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.billett-container {
+  margin: 2rem 0 0 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 14rem 14rem 14rem 14rem;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.billett {
+  position: relative;
+  height: 16rem;
+  margin-top: 5rem;
+  padding: 2rem 2rem;
+  border-radius: 0.2rem;
+  display: grid;
+  flex-direction: column;
+  grid-template-rows: 5rem 6rem 4rem;
+  justify-content: flex-start;
+  font-size: 1.1rem;
+  color: #0a1256;
+}
+
+input[type="button"] {
+  position: relative;
+  margin: 2rem 0 0 0;
+  font-size: 1.2rem;
+  color: #0a1256;
+  border: none;
+  padding: 0.25rem 0;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #e2e2e2;
+  scale: 1.1;
+}
+
+h3 {
+  font-size: 1.4rem;
+  padding: 0 0 1rem 0;
+}
+
+.barnebillett {
+  background-color: #fffacf;
+}
+
+.ungdomsbillett {
+  background-color: #ffe6cf;
+}
+
+.voksenbillett {
+  background-color: #d3cfff;
+}
+
+.sesongbillett {
+  background-color: #ffcfde;
+}
+
+.bunntekst {
+  position: relative;
+  font-size: 1.4rem;
+  padding: 5rem;
+}
+
+footer {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 0;
+}
+/*Egentlig ville jeg nok ikke animert noe i det hele tatt, men siden det var en del av oppgaven ville jeg legge til en egen animasjon*/
+
+.bubble-img {
+  width: 2rem;
+  position: relative;
+  -webkit-animation: anim-bubbles 6s infinite linear;
+  animation: anim-bubbles 6s infinite linear;
+}
+/*Jeg har ikke kopiert noe animasjonskode her, alt er gjort gjennom flere timer med tester.
+Men jeg har vært på både MDN Web docs og WSC School når jeg har stått fast*/
+@keyframes anim-bubbles {
+  0% {
+    bottom: -50px;
+    rotate: 10deg;
+  }
+  25% {
+    bottom: -20px;
+    rotate: 30deg;
+    opacity: 0.6;
+  }
+  50% {
+    bottom: 10px;
+    rotate: 40deg;
+    opacity: 0.4;
+  }
+  75% {
+    bottom: 40px;
+    rotate: 50deg;
+    opacity: 0.2;
+  }
+  100% {
+    bottom: 70px;
+    rotate: 90deg;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 2rem;
+  }
+
+  .billett-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 2rem;
+  }
+
+  header {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2rem;
+  }
+  ul {
+    position: relative;
+    list-style: none;
+    gap: 1em;
+  }
+  .bunntekst {
+    position: relative;
+    font-size: 1.4rem;
+    padding: 2rem;
+  }
 }

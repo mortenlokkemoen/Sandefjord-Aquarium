@@ -6,13 +6,12 @@ h3,
 p {
   margin: 0;
   padding: 0;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", sans-serif; /*Fjerner base margin og padding fra all tekstsyntax*/
 }
 /*deler av repeating-linear gradient er hentet fra 
 https://stackoverflow.com/questions/29591465/use-css-variables-with-rgba-for-gradient-transparency
 men ideen og mesteparten av koden kommer fra meg*/
 .main-container {
-  @media screen and (max-width: 90%, 70,5rem);
   margin-inline: auto; /*Definerer både logisk inline start og slutt på et element som tekst og direction*/
   position: relative;
   height: 100%;
@@ -55,7 +54,7 @@ a:link,
 a:visited {
   color: #fff;
 }
-
+/* Første seksjon som har med løveshowet å gjøre*/
 .section-one {
   position: relative;
   display: grid;
@@ -80,7 +79,8 @@ h2 {
   max-width: 100%;
   border-radius: 10px;
 }
-
+/* Både på sect1-text og image så kunne jeg fint droppet å gjort klassenavnet for komplisert men ville vise at ved et større prosjekt så hadde det vært
+lett å kunne spesifikt velge ut den teksten jeg ville. */
 .sect1-text,
 .sect2-text {
   font-size: 1.1em;
@@ -105,6 +105,7 @@ h2 {
   border-radius: 5px 0 0 5px; /*Runder av venstre hjørner på bilde*/
 }
 
+/* Fish card er klassen for hele kortet og sørger for at de har lik spacing hele veien.*/
 .fish-card {
   position: relative;
   margin-top: 3em;
@@ -113,6 +114,7 @@ h2 {
   justify-content: center;
 }
 
+/* På teksten har jeg valgt å legge til en padding på 2.5em for å teksten til å bli mer sentrert*/
 .fish-cardtext {
   font-size: 1.1rem;
   color: #0a1256;
@@ -121,7 +123,6 @@ h2 {
 }
 
 /* Her legges til forskjellige bakgrunnsfarger på kortene til teksten som har med fiskene å gjøre*/
-
 .fish1 {
   background-color: #fffacf;
 }
@@ -145,9 +146,10 @@ h2 {
   background-color: #d3cfff;
 }
 .fish8 {
-  background-color: #d3cfff;
+  background-color: #ffcfff;
 }
-
+/* Jeg kom mer eller mindre frem til denne løsningen selv gjennom å prøve forskjellige metoder. Tanken er at på 800px så endres content til flex column
+og med EM og REM på alt så blir det veldig responsivt helt ned til minste skjerm. Veldig fornøyd med løsningen.*/
 @media screen and (max-width: 800px) {
   .section-one {
     display: flex;
@@ -184,12 +186,15 @@ h2 {
     margin-top: 0.2rem;
   }
 }
-
+/*Sette opp en flex center på animasjonen. Likte at den subtly er i bunn av pagen og gir litt "undervannsfølse
+uten at det tar for mye oppmerksomhet.*/
 .Lottie-animation {
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
+  padding: 2rem 0;
   justify-content: center;
-  opacity: 0.4;
+  color: #fff;
+  opacity: 0.4; /*Jeg kom frem til at en Opacity på 0.4 passet bra for at den ikke tok all oppmerksomheten*/
 }

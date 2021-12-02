@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Contact form page">
     <link href="/css/kontakt-oss.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
     <link href="/css/kontakt-oss.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
     <title>Kontakt oss</title>
 </head>
 <body>
@@ -25,7 +25,75 @@
                 <li><a href="/Kontakt-oss.html">Kontakt oss</a></li>
             </ul>
         </header>
+        <main >
+            <h1> Viktig kontakt informasjon</h1>
+            <h3> På denne siden finner du all informasjon du trenger for å ta kontakt med oss</h3>
+        </main>
+        <div class="info-container">
+            <div class="info telefon">
+                <h3>Kontakt oss på telefon</h3>
+                 <p>Kontakt oss på telefon 35 00 11 00 hverdager Mandag - Fredag
+                     Fra kl 10:00 til 19:00
+                 </p>
+            </div>
 
+            <div class="info epost">
+                <h3>Kontakt oss på E-post</h3>
+                 <p>Kontakt oss på E-post: info@aquarium.sandefjord.com hverdager Mandag - Fredag
+                     Vi prøver å svare innen 1-3 dager men noe ventetid kan forventes i høysesonger
+                 </p>
+            </div>
+
+            <div class="info addresse">
+                <h3>Addresse</h3>
+                 <p>Du finner oss midt i Sandefjord Sentrum fiktivgate 4, 3241 Sandefjord.
+                     Åpningstider: 10:00 -16:00 Mandag til Fredag.  
+                 </p>
+            </div>       
+        </div>
+
+        <div class="form-info">
+            <h2>Du kan også bruke dette innmeldingsskjema til å sende oss en melding</h2>
+            <p>Fyll ut all relevant informasjon så kommer vi tilbake til deg. Vi minner om at svartid kan variere</p>
+        </div>
+
+            <!-- Her kommer form skjema. Noe av koden har jeg lest på w3school men prøvd å gjøre mye selv også-->
+            <!--Det positive med denne formen er at den er responsiv. Den er 25% på en kolonne og 75% på kolonne 2-->
+            <div class="form-container">
+                <form action="action_page.php">
+                    <div class="split">
+                        <div class="col-25">
+                            <label for="fname">Fornavn</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" #id="fname" name="firstname" placeholder="Fornavnet ditt..">
+                        </div>
+                    </div>
+
+                    <div class="split">
+                        <div class="col-25">
+                            <label for="lname">Etternavn</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" #id="lname" name="lastname" placeholder="Etternavnet ditt..">
+                         </div>
+                    </div>
+
+                    <div class="split">
+                        <div class="col-25">
+                            <label for="subject">Send melding</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Skriv her.."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="split">
+                        <input type="submit" value="submit">
+                    </div>
+                </form>
+            </div>
+    </div>
 </body>
 
 </html>

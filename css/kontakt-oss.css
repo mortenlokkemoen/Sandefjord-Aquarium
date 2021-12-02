@@ -6,6 +6,7 @@ h3,
 p {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /*Gjør at all padding inngår i total width og hight på form biten av koden*/
   font-family: "Oswald", sans-serif;
 }
 
@@ -50,4 +51,169 @@ ul {
 a:link,
 a:visited {
   color: #fff;
+}
+
+main {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.info-container {
+  margin: 2rem 0 0 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 18rem 18rem 18rem;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.info {
+  position: relative;
+  height: 16rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  display: grid;
+  flex-direction: column;
+  grid-template-rows: 3rem 10rem;
+  font-size: 1.1rem;
+  color: #0a1256;
+  text-align: center;
+}
+
+.telefon {
+  background-color: #ffcfde;
+}
+
+.epost {
+  background-color: #fffacf;
+}
+
+.addresse {
+  background-color: #d3cfff;
+}
+
+.form-info {
+  padding: 5rem 0;
+  position: relative;
+  text-align: center;
+
+  color: #fff;
+}
+
+/*Her kommer styling til skjema, igjen noe av det er lært på W3School om css form responsive*/
+
+.form-container {
+  display: flex;
+  grid-column: auto;
+  justify-content: center;
+  background-color: #cffff9;
+  color: #0a1256;
+  font-size: 1.2rem;
+  padding: 2.5rem 0;
+  width: 100%;
+}
+
+.split {
+  width: 100%;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /*Gjør at brukeren kan strekke meldingsboksen vertikalt*/
+}
+
+label {
+  padding: 20px 20px 20px 0; /*Legger padding slik at fornavn, Etternavn og Send melding flyttes mot venstre*/
+}
+
+input[type="submit"] {
+  background-color: #cffff9;
+  color: #0a1256;
+  padding: 12px 20px;
+  margin: 15px 0 0 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type="submit"]:hover {
+  background-color: #59855b;
+}
+
+.split:after {
+  /*Fjerner floats etter en kolonne*/
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-25 {
+  float: left; /*Floater venste kolonne til venstre*/
+  width: 25%;
+  margin-top: 0.5rem;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2rem;
+  }
+  ul {
+    position: relative;
+    list-style: none;
+    gap: 1em;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1rem;
+    overflow: hidden; /*Hider overflow på siden*/
+  }
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+  .form-container {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 2.5rem 0;
+  }
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+  }
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 2rem;
+  }
+  .form-info {
+    padding: 2rem 2rem;
+    text-align: center;
+  }
 }

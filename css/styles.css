@@ -49,11 +49,34 @@ ul {
   justify-content: flex-start;
   gap: 2.4em;
 }
-
-a:link,
-a:visited {
+/*Denne ideen til en type link style fikk jeg fra Kevin Powell på denne siden https://www.youtube.com/watch?v=ceNMP-aQkQ4
+Be utrolig fornøyd med*/
+.top-link {
+  text-decoration: none;
   color: #fff;
+  position: relative;
+  font-size: 1.4rem;
 }
+
+.top-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffcfde;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.top-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 /* Første seksjon som har med løveshowet å gjøre*/
 .section-one {
   position: relative;
@@ -74,18 +97,23 @@ h2 {
 }
 
 .sect1-image,
-.sect2-image {
+.sect2-image,
+.sect3-image {
   display: block;
   max-width: 100%;
   border-radius: 10px;
 }
+
+.sect3-image1 {
+  height: 100%;
+}
 /* Både på sect1-text og image så kunne jeg fint droppet å gjort klassenavnet for komplisert men ville vise at ved et større prosjekt så hadde det vært
 lett å kunne spesifikt velge ut den teksten jeg ville. */
-.sect1-text,
-.sect2-text {
+.sect-text {
   font-size: 1.1em;
 }
-.section-two {
+.section-two,
+.section-three {
   position: relative;
   display: grid;
   grid-template-columns: 15em 40em 15rem; /*Fant ut størrsen jeg ville ha px og konverterte til EM for responsivitet*/
@@ -156,8 +184,10 @@ og med EM og REM på alt så blir det veldig responsivt helt ned til minste skje
     flex-direction: column;
     padding: 0 2rem;
   }
-  .sect1-text,
-  .sect2-text {
+  .main-container {
+    overflow: hidden;
+  }
+  .sect-text {
     font-size: 1em;
     line-height: 1.8rem;
   }
@@ -166,14 +196,15 @@ og med EM og REM på alt så blir det veldig responsivt helt ned til minste skje
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding: 0 3rem;
+    text-align: center;
+    padding: 0 1rem;
     gap: 1em;
   }
   ul {
     position: relative;
     list-style: none;
     gap: 1em;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
   .section-two {
     display: flex;

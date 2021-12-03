@@ -47,9 +47,32 @@ ul {
   gap: 2.4em;
 }
 
-a:link,
-a:visited {
+/*Denne ideen til en type link style fikk jeg fra Kevin Powell på denne siden https://www.youtube.com/watch?v=ceNMP-aQkQ4
+Be utrolig fornøyd med resultatet*/
+.top-link {
+  text-decoration: none;
   color: #fff;
+  position: relative;
+  font-size: 1.4rem;
+}
+
+.top-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffcfde;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.top-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 main {
@@ -65,7 +88,7 @@ et resultat jeg ble fornøyd med*/
   display: grid;
   grid-template-columns: 14rem 14rem 14rem 14rem;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1.3rem;
 }
 
 .billett {
@@ -81,8 +104,14 @@ et resultat jeg ble fornøyd med*/
   font-size: 1.1rem;
   text-align: center;
   color: #0a1256;
+  cursor: pointer;
 }
 
+.billett:hover {
+  transform: scale(1.1);
+  transition: transform ease-in-out 400ms;
+}
+/* Jeg kunne gått for en helt vanlig knapp her, men ville lage å style en input knapp som lett kunne implementeres med JS til å faktisk linke til billettsalg*/
 input[type="button"] {
   position: relative;
   margin: 2rem 0 0 0;
@@ -138,8 +167,8 @@ footer {
 .bubble-img {
   width: 2rem;
   position: relative;
-  -webkit-animation: anim-bubbles 6s infinite linear;
-  animation: anim-bubbles 6s infinite linear;
+  -webkit-animation: anim-bubbles 6s infinite linear; /* Web kit inkluderer Safari 3.0 til 6.0 Nettlesere og tydligvis min Firefox*/
+  animation: anim-bubbles 6s infinite linear; /* For de fleste andre nettlesere*/
 }
 /*Jeg har ikke kopiert noe animasjonskode her, alt er gjort gjennom flere timer med tester.
 Men jeg har vært på både MDN Web docs og WSC School når jeg har stått fast*/
@@ -177,6 +206,7 @@ Men jeg har vært på både MDN Web docs og WSC School når jeg har stått fast*
     justify-content: center;
     height: 100%;
     padding: 0 2rem;
+    overflow: hidden;
   }
 
   .billett-container {
@@ -199,6 +229,10 @@ Men jeg har vært på både MDN Web docs og WSC School når jeg har stått fast*
     position: relative;
     list-style: none;
     gap: 1em;
+    padding: 0 1rem 0 0;
+  }
+  main {
+    padding: 2rem;
   }
   .bunntekst {
     position: relative;

@@ -46,7 +46,7 @@ ul {
   position: relative;
   list-style: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Pusher listen opp til Firmanavnet*/
   gap: 2.4em;
 }
 /*Denne ideen til en type link style fikk jeg fra Kevin Powell på denne siden https://www.youtube.com/watch?v=ceNMP-aQkQ4
@@ -76,6 +76,39 @@ Be utrolig fornøyd med*/
   transform: scaleX(1);
   transform-origin: left;
 }
+/*Fant ut at jeg hadde lyst å gjøre noe mer ut av sjøløve showet så lagde en liten animasjon til på slutten. Alt er fra mine tanker*/
+.sea_lion_head_img {
+  position: absolute;
+  height: 4rem;
+}
+
+.sea_lion_anim {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 150px;
+  -webkit-animation: sealion_head 6000ms 3 linear; /* Web kit inkluderer Safari 3.0 til 6.0 Nettlesere og tydligvis min Firefox*/
+  animation: sealion_head 6000ms 3 linear; /*Jeg fant ut at jeg ikke ville ha infinite men kun 3 iterasjoner*/
+  animation-delay: 5000ms;
+}
+/*Sjøløve animasjonsfrekvens. Jeg ville hode skulle gå opp, så ned igjen*/
+@keyframes sealion_head {
+  0% {
+    top: 150px;
+  }
+  25% {
+    top: 110px;
+  }
+  50% {
+    top: 100px;
+  }
+  75% {
+    top: 110px;
+  }
+  100% {
+    top: 150px;
+  }
+}
 
 /* Første seksjon som har med løveshowet å gjøre*/
 .section-one {
@@ -94,6 +127,7 @@ Be utrolig fornøyd med*/
 
 h2 {
   font-size: 1.6rem;
+  padding: 0 0 1rem 0;
 }
 
 .sect1-image,
@@ -105,12 +139,16 @@ h2 {
 }
 
 .sect3-image1 {
-  height: 100%;
+  height: 39vh; /* Jeg testet denne på to nettlesere med 100% istedenfor og da ble det helt perfekt i Firefox, men andre nettlesere
+  så ble det helt forferdelig. Men VH funket på begge, selvom det var en liten forskjell der også. */
 }
 /* Både på sect1-text og image så kunne jeg fint droppet å gjort klassenavnet for komplisert men ville vise at ved et større prosjekt så hadde det vært
 lett å kunne spesifikt velge ut den teksten jeg ville. */
 .sect-text {
   font-size: 1.1em;
+  line-height: 1.5rem;
+  padding: 0.5rem;
+  border-bottom: 2px solid #fff; /* Tror både uten og med border bottom kan passe bra. Jeg var litt i tvil men valgte å ha med*/
 }
 .section-two,
 .section-three {
@@ -190,6 +228,8 @@ og med EM og REM på alt så blir det veldig responsivt helt ned til minste skje
   .sect-text {
     font-size: 1em;
     line-height: 1.8rem;
+    padding: 0.5rem;
+    border-bottom: 2px solid #fff;
   }
   header {
     position: relative;

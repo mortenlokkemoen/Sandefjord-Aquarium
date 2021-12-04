@@ -113,7 +113,7 @@ et resultat jeg ble fornøyd med*/
 }
 /* Jeg kunne gått for en helt vanlig knapp her, men ville lage å style en input knapp som lett kunne implementeres med JS til å faktisk linke til billettsalg*/
 input[type="button"] {
-  position: relative;
+  position: relative; /*Jeg håper virkelig en input button er en button tag til oppgaven. For det er ingen forskjell på style den*/
   margin: 2rem 0 0 0;
   font-size: 1.2rem;
   color: #0a1256;
@@ -150,7 +150,7 @@ h3 {
   background-color: #ffcfde;
 }
 
-.bunntekst {
+.billett_info_txt {
   position: relative;
   font-size: 1.4rem;
   padding: 5rem;
@@ -234,7 +234,7 @@ Men jeg har vært på både MDN Web docs og WSC School når jeg har stått fast*
   main {
     padding: 2rem;
   }
-  .bunntekst {
+  .billett_info_txt {
     position: relative;
     font-size: 1.4rem;
     padding: 2rem;

@@ -230,9 +230,9 @@ input[type="submit"]:hover {
     margin-top: 0;
   }
   .form-container {
-    width: 100%;
+    width: 90%;
     font-size: 1.2rem;
-    padding: 2.5rem 0;
+    padding: 1.5rem 1rem;
   }
   input[type="text"],
   select,
@@ -251,3 +251,11 @@ input[type="submit"]:hover {
     text-align: center;
   }
 }
+
+/*Jeg vil si jeg er førnøyd med sluttresultatet. Jeg brukte over en hel dag på å brainstorme førstesiden med Figma og fikk til 
+alt jeg ville. Mesteparten av kode og ideer kommer fra meg selv og det er jeg svært fornøyd med.  Siden føler jeg er veldig enkel
+i sin helhet. Er ikke mye fancy , men jeg tror det er en side man fint kunne bygd på og injecta med .js og virkelig fått bra.
+
+Testet responsivitet hele veien og det er ikke mye i koden som er statisk. Farger for fargeblinde skal heller ikke være noe problem. 
+I forhold til motorikk kunne jeg ha lagt til en scroll funksjon som gjør 100vh per scroll, men etter å ha testet følte jeg den ikke
+passet helt. Brukt Github hele veien til å pushe iterasjoner også*/
